@@ -208,7 +208,7 @@ export default function WalletScreen() {
               <Text style={styles.modalSub}>
                 {hasCard
                   ? `Charging saved card •••• ${profile?.card_last4}`
-                  : "You will be directed to Paystack checkout"}
+                  : "You'll be directed to Paystack checkout. Paystack transaction charges apply."}
               </Text>
 
               {/* Quick amounts */}
