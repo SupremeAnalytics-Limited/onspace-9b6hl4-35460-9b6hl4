@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import {
   View, Text, StyleSheet, TouchableOpacity, StatusBar,
-  Clipboard, ScrollView, ActivityIndicator, Linking,
+  ScrollView, ActivityIndicator, Linking,
 } from 'react-native';
+import * as Clipboard from 'expo-clipboard';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -204,7 +205,7 @@ export default function NumberDisplayScreen() {
   };
 
   const copyToClipboard = async (text: string, type: 'number' | 'otp' | 'ref') => {
-    Clipboard.setString(text);
+    await Clipboard.setStringAsync(text);
     await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     if (type === 'number') { setCopiedNumber(true); setTimeout(() => setCopiedNumber(false), 2000); }
     else if (type === 'otp') { setCopiedOTP(true); setTimeout(() => setCopiedOTP(false), 2000); }
