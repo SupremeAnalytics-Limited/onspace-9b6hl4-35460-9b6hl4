@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, useCallback } from 'react';
 import {
   View, Text, StyleSheet, TouchableOpacity, ScrollView,
   StatusBar, TextInput, ActivityIndicator, Animated,
-  RefreshControl, FlatList, SectionList,
+  RefreshControl, SectionList,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
@@ -797,7 +797,7 @@ const styles = StyleSheet.create({
   cardName: { color: Colors.text, fontSize: FontSize.sm, fontWeight: FontWeight.bold, lineHeight: 18 },
   cardSub: { color: Colors.textMuted, fontSize: 10 },
   cardPrice: { color: Colors.primary, fontSize: FontSize.sm, fontWeight: FontWeight.bold },
-  cardFooter: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 'auto' as any },
+  cardFooter: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 8 },
   cardBuyLabel: { color: Colors.textSecondary, fontSize: 11, fontWeight: FontWeight.medium },
 
   // Empty
