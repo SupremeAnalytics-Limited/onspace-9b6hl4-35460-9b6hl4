@@ -48,6 +48,17 @@ export async function initializePayment(
   return invokeWithAuth('wallet-topup', { email, amount, type, metadata });
 }
 
+/** Charge a previously saved card (authorization code) for wallet top-up or purchases. */
+export async function chargeWithSavedCard(
+  email: string,
+  amount: number,
+  authorizationCode: string,
+  type: string,
+  metadata?: Record<string, unknown>,
+) {
+  return invokeWithAuth('wallet-topup', { email, amount, type, auth_code: authorizationCode, metadata });
+}
+
 /** Purchase a number. Pass paystack_reference after a card/bank payment, or use_wallet: true to spend from wallet balance. */
 export async function purchaseNumber(params: {
   provider_code: string;
